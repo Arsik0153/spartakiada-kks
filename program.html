@@ -80,6 +80,7 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(200, 16, 46, 0.35);
         }
+
         /* ===== HEADER ===== */
         .navbar {
             background: var(--bg-primary);
@@ -96,14 +97,10 @@
             align-items: center;
             justify-content: space-between;
         }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-            color: var(--text-primary);
-        }
-        .logo .accent {
-            color: var(--accent);
+        .logo img {
+            height: 45px;
+            width: auto;
+            display: block;
         }
         .nav-links {
             display: flex;
@@ -161,10 +158,24 @@
             border-radius: 4px;
             transition: var(--transition);
         }
+
         /* ===== PAGE CONTENT ===== */
         .page-section {
             padding: 60px 0 80px;
             flex: 1;
+            background: #0B0E1A url('images/fon.png') no-repeat center center / cover;
+            position: relative;
+        }
+        .page-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(11, 14, 26, 0.8);
+            z-index: 0;
+        }
+        .page-section .container {
+            position: relative;
+            z-index: 1;
         }
         .page-header {
             margin-bottom: 40px;
@@ -249,6 +260,7 @@
             margin-right: 12px;
             min-width: 48px;
         }
+
         /* ===== FOOTER ===== */
         .footer {
             background: var(--bg-primary);
@@ -279,12 +291,11 @@
         .footer a:hover {
             color: var(--accent);
         }
-        .footer-brand {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-        .footer-brand .accent {
-            color: var(--accent);
+        .footer-brand img {
+            height: 30px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
         }
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -293,6 +304,7 @@
             color: var(--text-secondary);
             font-size: 0.8rem;
         }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
             .footer-grid {
@@ -345,7 +357,9 @@
     <!-- ===== HEADER ===== -->
     <header class="navbar">
         <div class="container nav-inner">
-            <a href="index.html" class="logo">Спартакиада <span class="accent">ККС</span></a>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Спартакиада ККС" />
+            </a>
             <button class="hamburger" id="hamburger" aria-label="Меню">
                 <span></span><span></span><span></span>
             </button>
@@ -365,43 +379,54 @@
         <div class="container">
             <div class="page-header">
                 <h1>Программа соревнований</h1>
-                <p>Предварительное расписание по дням. Подробности будут уточнены после утверждения регламента.</p>
+                <p>Расписание мероприятий по дням. Нажмите на день, чтобы раскрыть подробности.</p>
             </div>
             <div class="program-list">
+                <!-- 1 сентября -->
                 <div class="program-item active">
                     <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>День 1 <span class="day-sub">Открытие · Квалификационные этапы</span></h3>
+                        <h3>1 сентября <span class="day-sub">Мандатная комиссия</span></h3>
                         <span class="program-arrow">▾</span>
                     </div>
                     <div class="program-body">
-                        <p><span class="time">10:00</span> Торжественное открытие</p>
-                        <p><span class="time">11:30</span> Футбол — групповой этап</p>
-                        <p><span class="time">15:00</span> Баскетбол — квалификация</p>
-                        <p><span class="time">17:30</span> Волейбол — предварительные игры</p>
+                        <p><span class="time">10:00</span> Регистрация участников</p>
+                        <p><span class="time">14:00</span> Заседание мандатной комиссии</p>
+                        <p><span class="time">18:00</span> Совещание капитанов команд</p>
                     </div>
                 </div>
+                <!-- 2 сентября -->
                 <div class="program-item">
                     <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>День 2 <span class="day-sub">Полуфиналы</span></h3>
+                        <h3>2 сентября <span class="day-sub">Церемония открытия · Соревнования</span></h3>
                         <span class="program-arrow">▾</span>
                     </div>
                     <div class="program-body">
-                        <p><span class="time">09:00</span> Бадминтон — ¼ финала</p>
-                        <p><span class="time">11:00</span> Волейбол — полуфиналы</p>
-                        <p><span class="time">14:00</span> Футбол — полуфиналы</p>
-                        <p><span class="time">17:00</span> Баскетбол — полуфиналы</p>
+                        <p><span class="time">10:00</span> Торжественное открытие, парад команд</p>
+                        <p><span class="time">11:30</span> Начало соревнований (футбол, баскетбол)</p>
+                        <p><span class="time">15:00</span> Волейбол, бадминтон</p>
                     </div>
                 </div>
+                <!-- 3 сентября -->
                 <div class="program-item">
                     <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>День 3 <span class="day-sub">Финалы · Закрытие</span></h3>
+                        <h3>3 сентября <span class="day-sub">Финалы · Награждение · Гала-ужин</span></h3>
                         <span class="program-arrow">▾</span>
                     </div>
                     <div class="program-body">
-                        <p><span class="time">10:00</span> Футбол — финал</p>
-                        <p><span class="time">12:30</span> Баскетбол — финал</p>
-                        <p><span class="time">15:00</span> Волейбол — финал</p>
-                        <p><span class="time">18:00</span> Церемония закрытия и награждение</p>
+                        <p><span class="time">10:00</span> Финалы по всем видам спорта</p>
+                        <p><span class="time">16:00</span> Церемония награждения победителей</p>
+                        <p><span class="time">19:00</span> Гала-ужин для участников</p>
+                    </div>
+                </div>
+                <!-- 4 сентября -->
+                <div class="program-item">
+                    <div class="program-header" onclick="toggleProgram(this)">
+                        <h3>4 сентября <span class="day-sub">Отъезд участников</span></h3>
+                        <span class="program-arrow">▾</span>
+                    </div>
+                    <div class="program-body">
+                        <p><span class="time">09:00</span> Завтрак, сбор вещей</p>
+                        <p><span class="time">12:00</span> Отъезд участников</p>
                     </div>
                 </div>
             </div>
@@ -413,7 +438,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand">Спартакиада <span class="accent">ККС</span></div>
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="Спартакиада ККС" />
+                    </div>
                     <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративное спортивное мероприятие</p>
                 </div>
                 <div>
@@ -438,7 +465,6 @@
             const item = header.parentElement;
             item.classList.toggle('active');
         }
-
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         hamburger.addEventListener('click', () => {
