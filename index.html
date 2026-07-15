@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <style>
-        /* ===== GLOBAL ===== */
         *,
         *::before,
         *::after {
@@ -79,6 +78,7 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(200, 16, 46, 0.35);
         }
+
         /* ===== HEADER ===== */
         .navbar {
             background: var(--bg-primary);
@@ -95,14 +95,10 @@
             align-items: center;
             justify-content: space-between;
         }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-            color: var(--text-primary);
-        }
-        .logo .accent {
-            color: var(--accent);
+        .logo img {
+            height: 45px;
+            width: auto;
+            display: block;
         }
         .nav-links {
             display: flex;
@@ -160,17 +156,27 @@
             border-radius: 4px;
             transition: var(--transition);
         }
-        /* ===== HERO ===== */
+
+        /* ===== HERO with background and decorations ===== */
         .hero {
+            position: relative;
+            background: #0B0E1A url('images/fon.png') no-repeat center center / cover;
             min-height: 80vh;
             display: flex;
             align-items: center;
-            position: relative;
-            padding: 60px 0;
             overflow: hidden;
-            background: var(--bg-primary);
+            padding: 60px 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(11, 14, 26, 0.7);
+            z-index: 1;
         }
         .hero-grid {
+            position: relative;
+            z-index: 2;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
@@ -229,16 +235,31 @@
             aspect-ratio: 4/3;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .hero-glow {
+
+        /* Decorations */
+        .hero .deco-top-left {
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle at 70% 50%, rgba(200, 16, 46, 0.08), transparent 70%);
-            right: -80px;
-            top: 20%;
-            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: url('images/element_1.png') no-repeat center / contain;
+            opacity: 0.15;
             pointer-events: none;
+            z-index: 0;
         }
+        .hero .deco-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;
+            height: 180px;
+            background: url('images/element_2.png') no-repeat center / contain;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             background: var(--bg-primary);
@@ -269,12 +290,11 @@
         .footer a:hover {
             color: var(--accent);
         }
-        .footer-brand {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-        .footer-brand .accent {
-            color: var(--accent);
+        .footer-brand img {
+            height: 30px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
         }
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -283,6 +303,7 @@
             color: var(--text-secondary);
             font-size: 0.8rem;
         }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
             .hero-grid {
@@ -341,7 +362,9 @@
     <!-- ===== HEADER ===== -->
     <header class="navbar">
         <div class="container nav-inner">
-            <a href="index.html" class="logo">Спартакиада <span class="accent">ККС</span></a>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Спартакиада ККС" />
+            </a>
             <button class="hamburger" id="hamburger" aria-label="Меню">
                 <span></span><span></span><span></span>
             </button>
@@ -358,12 +381,14 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero">
+        <div class="deco-top-left"></div>
+        <div class="deco-bottom-right"></div>
         <div class="container hero-grid">
             <div class="hero-content">
                 <span class="hero-badge">Официальный сайт</span>
                 <h1>СПАРТАКИАДА <br /><span class="highlight">ККС</span></h1>
                 <div class="hero-sub">г. Шымкент</div>
-                <div class="hero-date">Сентябрь 2026</div>
+                <div class="hero-date">1–4 сентября 2026</div>
                 <p>Корпоративное спортивное мероприятие, объединяющее команды и укрепляющее корпоративный дух.</p>
                 <a href="registration.html" class="btn-primary">
                     Подать заявку
@@ -374,7 +399,6 @@
                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&crop=center&auto=format" alt="Спортивная арена" loading="lazy" />
             </div>
         </div>
-        <div class="hero-glow"></div>
     </section>
 
     <!-- ===== FOOTER ===== -->
@@ -382,7 +406,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand">Спартакиада <span class="accent">ККС</span></div>
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="Спартакиада ККС" />
+                    </div>
                     <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративное спортивное мероприятие</p>
                 </div>
                 <div>
