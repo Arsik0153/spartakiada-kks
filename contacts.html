@@ -145,6 +145,30 @@
             box-shadow: 0 6px 24px rgba(200, 16, 46, 0.3);
             border-bottom: none !important;
         }
+        .language-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            padding: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .nav-links .language-switch a {
+            border-bottom: none;
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.62);
+        }
+        .nav-links .language-switch a:hover,
+        .nav-links .language-switch a.active {
+            border-bottom: none;
+            color: #fff;
+            background: var(--accent);
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -322,9 +346,9 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="about.html">О спартакиаде</a></li>
                 <li><a href="program.html">Программа</a></li>
-                <li><a href="documents.html">Документы</a></li>
                 <li><a href="contacts.html" class="active">Контакты</a></li>
                 <li><a href="registration.html" class="nav-cta">Подать заявку</a></li>
+                <li class="language-switch" aria-label="Переключение языка"><a href="contacts.html" class="active">RU</a><a href="kk/contacts.html">KK</a></li>
             </ul>
         </div>
     </header>

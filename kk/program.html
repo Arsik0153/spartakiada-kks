@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Программа — Спартакиада ККС 2026</title>
+    <title>Бағдарлама — ККС спартакиадасы 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
@@ -187,7 +187,7 @@
         .page-section {
             padding: 60px 0 80px;
             flex: 1;
-            background: #0B0E1A url('images/fon.png') no-repeat center center / cover;
+            background: #0B0E1A url('../images/fon.png') no-repeat center center / cover;
             position: relative;
         }
         .page-section::before {
@@ -382,18 +382,18 @@
     <header class="navbar">
         <div class="container nav-inner">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Спартакиада ККС" />
+                <img src="../images/logo.png" alt="ККС спартакиадасы" />
             </a>
-            <button class="hamburger" id="hamburger" aria-label="Меню">
+            <button class="hamburger" id="hamburger" aria-label="Мәзір">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О спартакиаде</a></li>
-                <li><a href="program.html" class="active">Программа</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="registration.html" class="nav-cta">Подать заявку</a></li>
-                <li class="language-switch" aria-label="Переключение языка"><a href="program.html" class="active">RU</a><a href="kk/program.html">KK</a></li>
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="about.html">Спартакиада туралы</a></li>
+                <li><a href="program.html" class="active">Бағдарлама</a></li>
+                <li><a href="contacts.html">Байланыс</a></li>
+                <li><a href="registration.html" class="nav-cta">Өтінім беру</a></li>
+                <li class="language-switch" aria-label="Тілді ауыстыру"><a href="../program.html">RU</a><a href="program.html" class="active">KK</a></li>
             </ul>
         </div>
     </header>
@@ -402,55 +402,55 @@
     <section class="page-section">
         <div class="container">
             <div class="page-header">
-                <h1>Программа соревнований</h1>
-                <p>Расписание мероприятий по дням. Нажмите на день, чтобы раскрыть подробности.</p>
+                <h1>Жарыстар бағдарламасы</h1>
+                <p>Іс-шаралардың күндер бойынша кестесі. Толық ақпаратты көру үшін күнді басыңыз.</p>
             </div>
             <div class="program-list">
-                <!-- 1 сентября -->
+                <!-- 1 қыркүйек -->
                 <div class="program-item active">
                     <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>1 сентября <span class="day-sub">Мандатная комиссия</span></h3>
+                        <h3>1 қыркүйек <span class="day-sub">Мандат комиссиясы</span></h3>
                         <span class="program-arrow">▾</span>
                     </div>
                     <div class="program-body">
-                        <p><span class="time">10:00</span> Регистрация участников</p>
-                        <p><span class="time">14:00</span> Заседание мандатной комиссии</p>
-                        <p><span class="time">18:00</span> Совещание капитанов команд</p>
+                        <p><span class="time">10:00</span> Қатысушыларды тіркеу</p>
+                        <p><span class="time">14:00</span> Мандат комиссиясының отырысы</p>
+                        <p><span class="time">18:00</span> Команда капитандарының кеңесі</p>
                     </div>
                 </div>
-                <!-- 2 сентября -->
+                <!-- 2 қыркүйек -->
                 <div class="program-item">
                     <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>2 сентября <span class="day-sub">Церемония открытия · Соревнования</span></h3>
+                        <h3>2 қыркүйек <span class="day-sub">Ашылу салтанаты · Жарыстар</span></h3>
                         <span class="program-arrow">▾</span>
                     </div>
                     <div class="program-body">
-                        <p><span class="time">10:00</span> Торжественное открытие, парад команд</p>
-                        <p><span class="time">11:30</span> Начало соревнований (футбол, баскетбол)</p>
+                        <p><span class="time">10:00</span> Салтанатты ашылу, командалар шеруі</p>
+                        <p><span class="time">11:30</span> Жарыстардың басталуы (футбол, баскетбол)</p>
                         <p><span class="time">15:00</span> Волейбол, бадминтон</p>
                     </div>
                 </div>
-                <!-- 3 сентября -->
+                <!-- 3 қыркүйек -->
                 <div class="program-item">
                     <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>3 сентября <span class="day-sub">Финалы · Награждение · Гала-ужин</span></h3>
+                        <h3>3 қыркүйек <span class="day-sub">Финалдар · Марапаттау · Гала-кешкі ас</span></h3>
                         <span class="program-arrow">▾</span>
                     </div>
                     <div class="program-body">
-                        <p><span class="time">10:00</span> Финалы по всем видам спорта</p>
-                        <p><span class="time">16:00</span> Церемония награждения победителей</p>
-                        <p><span class="time">19:00</span> Гала-ужин для участников</p>
+                        <p><span class="time">10:00</span> Барлық спорт түрлері бойынша финалдар</p>
+                        <p><span class="time">16:00</span> Жеңімпаздарды марапаттау рәсімі</p>
+                        <p><span class="time">19:00</span> Қатысушыларға арналған гала-кешкі ас</p>
                     </div>
                 </div>
-                <!-- 4 сентября -->
+                <!-- 4 қыркүйек -->
                 <div class="program-item">
                     <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>4 сентября <span class="day-sub">Отъезд участников</span></h3>
+                        <h3>4 қыркүйек <span class="day-sub">Қатысушылардың қайтуы</span></h3>
                         <span class="program-arrow">▾</span>
                     </div>
                     <div class="program-body">
-                        <p><span class="time">09:00</span> Завтрак, сбор вещей</p>
-                        <p><span class="time">12:00</span> Отъезд участников</p>
+                        <p><span class="time">09:00</span> Таңғы ас, заттарды жинау</p>
+                        <p><span class="time">12:00</span> Қатысушылардың қайтуы</p>
                     </div>
                 </div>
             </div>
@@ -463,23 +463,23 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand">
-                        <img src="images/logo.png" alt="Спартакиада ККС" />
+                        <img src="../images/logo.png" alt="ККС спартакиадасы" />
                     </div>
-                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративное спортивное мероприятие</p>
+                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративтік спорттық іс-шара</p>
                 </div>
                 <div>
-                    <h4>Контакты</h4>
+                    <h4>Байланыс</h4>
                     <p>Телефон: <a href="tel:+77001234567">+7 700 123 45 67</a></p>
                     <p>Email: <a href="mailto:spartakiada@kks.kz">spartakiada@kks.kz</a></p>
                 </div>
                 <div>
-                    <h4>Организатор</h4>
-                    <p>Комитет корпоративного спорта</p>
-                    <p style="font-size:0.85rem; color: var(--text-secondary);">г. Шымкент, 2026</p>
+                    <h4>Ұйымдастырушы</h4>
+                    <p>Корпоративтік спорт комитеті</p>
+                    <p style="font-size:0.85rem; color: var(--text-secondary);">Шымкент қ., 2026</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Спартакиада ККС. Все права защищены.
+                &copy; 2026 ККС спартакиадасы. Барлық құқықтар қорғалған.
             </div>
         </div>
     </footer>

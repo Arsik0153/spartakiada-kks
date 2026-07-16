@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Программа — Спартакиада ККС 2026</title>
+    <title>Басты бет — ККС спартакиадасы 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
@@ -17,12 +17,10 @@
         }
         :root {
             --bg-primary: #0B0E1A;
-            --bg-card: #171E2E;
             --text-primary: #FFFFFF;
             --text-secondary: #B0B8C9;
             --accent: #C8102E;
             --accent-hover: #A00D25;
-            --border-color: #2A3348;
             --shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
             --radius: 16px;
             --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -98,7 +96,7 @@
             justify-content: space-between;
         }
         .logo img {
-            height: 45px;
+            height: 100px;  
             width: auto;
             display: block;
         }
@@ -183,106 +181,107 @@
             transition: var(--transition);
         }
 
-        /* ===== PAGE CONTENT ===== */
-        .page-section {
-            padding: 60px 0 80px;
-            flex: 1;
-            background: #0B0E1A url('images/fon.png') no-repeat center center / cover;
+        /* ===== HERO ===== */
+        .hero {
             position: relative;
+            background: #0B0E1A url('../images/fon.png') no-repeat center center / cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 60px 0;
         }
-        .page-section::before {
+        .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(11, 14, 26, 0.8);
-            z-index: 0;
-        }
-        .page-section .container {
-            position: relative;
+            background: rgba(11, 14, 26, 0.7);
             z-index: 1;
         }
-        .page-header {
-            margin-bottom: 40px;
-        }
-        .page-header h1 {
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-        }
-        .page-header p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            max-width: 640px;
-        }
-        .program-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .program-item {
-            background: var(--bg-card);
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        .program-item:hover {
-            border-color: rgba(200, 16, 46, 0.3);
-        }
-        .program-header {
-            display: flex;
-            justify-content: space-between;
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            padding: 18px 24px;
-            cursor: pointer;
-            user-select: none;
+            width: 100%;
         }
-        .program-header h3 {
-            font-weight: 600;
-            font-size: 1rem;
+        .hero-content {
+            z-index: 2;
         }
-        .program-header .day-sub {
-            font-weight: 400;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-left: 12px;
-        }
-        .program-arrow {
-            font-size: 1.2rem;
-            transition: var(--transition);
-            color: var(--text-secondary);
-        }
-        .program-item.active .program-arrow {
-            transform: rotate(180deg);
-            color: var(--accent);
-        }
-        .program-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            padding: 0 24px;
-        }
-        .program-item.active .program-body {
-            max-height: 300px;
-            padding: 0 24px 20px;
-        }
-        .program-body p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            padding: 4px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        .program-body p:last-child {
-            border-bottom: none;
-        }
-        .program-body .time {
+        .hero-badge {
             display: inline-block;
             color: var(--accent);
             font-weight: 600;
-            font-size: 0.75rem;
-            margin-right: 12px;
-            min-width: 48px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 4px 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+        }
+        .hero h1 .highlight {
+            color: var(--accent);
+        }
+        .hero-sub {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .hero-date {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin-bottom: 32px;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 560px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Decorations */
+        .hero .deco-top-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: url('../images/element_1.png') no-repeat center / contain;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero .deco-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;
+            height: 180px;
+            background: url('../images/element_2.png') no-repeat center / contain;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* ===== FOOTER ===== */
@@ -331,6 +330,17 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-image img {
+                max-width: 100%;
+            }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -358,20 +368,15 @@
             .container {
                 padding: 0 20px;
             }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .hero-sub {
+                font-size: 1.1rem;
+            }
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
-            }
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
-            .program-header {
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-            .program-header .day-sub {
-                margin-left: 0;
-                width: 100%;
             }
         }
     </style>
@@ -382,77 +387,40 @@
     <header class="navbar">
         <div class="container nav-inner">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Спартакиада ККС" />
+                <img src="../images/logo.png" alt="ККС спартакиадасы" />
             </a>
-            <button class="hamburger" id="hamburger" aria-label="Меню">
+            <button class="hamburger" id="hamburger" aria-label="Мәзір">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О спартакиаде</a></li>
-                <li><a href="program.html" class="active">Программа</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="registration.html" class="nav-cta">Подать заявку</a></li>
-                <li class="language-switch" aria-label="Переключение языка"><a href="program.html" class="active">RU</a><a href="kk/program.html">KK</a></li>
+                <li><a href="index.html" class="active">Басты бет</a></li>
+                <li><a href="about.html">Спартакиада туралы</a></li>
+                <li><a href="program.html">Бағдарлама</a></li>
+                <li><a href="contacts.html">Байланыс</a></li>
+                <li><a href="registration.html" class="nav-cta">Өтінім беру</a></li>
+                <li class="language-switch" aria-label="Тілді ауыстыру"><a href="../index.html">RU</a><a href="index.html" class="active">KK</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- ===== PAGE CONTENT ===== -->
-    <section class="page-section">
-        <div class="container">
-            <div class="page-header">
-                <h1>Программа соревнований</h1>
-                <p>Расписание мероприятий по дням. Нажмите на день, чтобы раскрыть подробности.</p>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="deco-top-left"></div>
+        <div class="deco-bottom-right"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-badge">Ресми сайт</span>
+                <h1>ККС <br /><span class="highlight">СПАРТАКИАДАСЫ</span></h1>
+                <div class="hero-sub">Шымкент қ.</div>
+                <div class="hero-date">2026 жылғы 1–4 қыркүйек</div>
+                <p>Командаларды біріктіріп, корпоративтік рухты нығайтатын спорттық іс-шара.</p>
+                <a href="registration.html" class="btn-primary">
+                    Өтінім беру
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
             </div>
-            <div class="program-list">
-                <!-- 1 сентября -->
-                <div class="program-item active">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>1 сентября <span class="day-sub">Мандатная комиссия</span></h3>
-                        <span class="program-arrow">▾</span>
-                    </div>
-                    <div class="program-body">
-                        <p><span class="time">10:00</span> Регистрация участников</p>
-                        <p><span class="time">14:00</span> Заседание мандатной комиссии</p>
-                        <p><span class="time">18:00</span> Совещание капитанов команд</p>
-                    </div>
-                </div>
-                <!-- 2 сентября -->
-                <div class="program-item">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>2 сентября <span class="day-sub">Церемония открытия · Соревнования</span></h3>
-                        <span class="program-arrow">▾</span>
-                    </div>
-                    <div class="program-body">
-                        <p><span class="time">10:00</span> Торжественное открытие, парад команд</p>
-                        <p><span class="time">11:30</span> Начало соревнований (футбол, баскетбол)</p>
-                        <p><span class="time">15:00</span> Волейбол, бадминтон</p>
-                    </div>
-                </div>
-                <!-- 3 сентября -->
-                <div class="program-item">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>3 сентября <span class="day-sub">Финалы · Награждение · Гала-ужин</span></h3>
-                        <span class="program-arrow">▾</span>
-                    </div>
-                    <div class="program-body">
-                        <p><span class="time">10:00</span> Финалы по всем видам спорта</p>
-                        <p><span class="time">16:00</span> Церемония награждения победителей</p>
-                        <p><span class="time">19:00</span> Гала-ужин для участников</p>
-                    </div>
-                </div>
-                <!-- 4 сентября -->
-                <div class="program-item">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <h3>4 сентября <span class="day-sub">Отъезд участников</span></h3>
-                        <span class="program-arrow">▾</span>
-                    </div>
-                    <div class="program-body">
-                        <p><span class="time">09:00</span> Завтрак, сбор вещей</p>
-                        <p><span class="time">12:00</span> Отъезд участников</p>
-                    </div>
-                </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&crop=center&auto=format" alt="Спорт аренасы" loading="lazy" />
             </div>
         </div>
     </section>
@@ -463,32 +431,28 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand">
-                        <img src="images/logo.png" alt="Спартакиада ККС" />
+                        <img src="../images/logo.png" alt="ККС спартакиадасы" />
                     </div>
-                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративное спортивное мероприятие</p>
+                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративтік спорттық іс-шара</p>
                 </div>
                 <div>
-                    <h4>Контакты</h4>
+                    <h4>Байланыс</h4>
                     <p>Телефон: <a href="tel:+77001234567">+7 700 123 45 67</a></p>
-                    <p>Email: <a href="mailto:spartakiada@kks.kz">spartakiada@kks.kz</a></p>
+                    <p>Email: <a href="mailto:zh.galieva@kus.kz">zh.galieva@kus.kz</a></p>
                 </div>
                 <div>
-                    <h4>Организатор</h4>
-                    <p>Комитет корпоративного спорта</p>
-                    <p style="font-size:0.85rem; color: var(--text-secondary);">г. Шымкент, 2026</p>
+                    <h4>Ұйымдастырушы</h4>
+                    <p>Корпоративтік спорт комитеті</p>
+                    <p style="font-size:0.85rem; color: var(--text-secondary);">Шымкент қ., 2026</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Спартакиада ККС. Все права защищены.
+                &copy; 2026 ККС спартакиадасы. Барлық құқықтар қорғалған.
             </div>
         </div>
     </footer>
 
     <script>
-        function toggleProgram(header) {
-            const item = header.parentElement;
-            item.classList.toggle('active');
-        }
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         hamburger.addEventListener('click', () => {

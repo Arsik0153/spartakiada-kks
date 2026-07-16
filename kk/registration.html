@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Регистрация — Спартакиада ККС 2026</title>
+    <title>Тіркелу — ККС спартакиадасы 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
@@ -599,17 +599,17 @@
     <!-- ===== HEADER ===== -->
     <header class="navbar">
         <div class="container nav-inner">
-            <a href="index.html" class="logo">Спартакиада <span class="accent">ККС</span></a>
-            <button class="hamburger" id="hamburger" aria-label="Меню">
+            <a href="index.html" class="logo">ККС <span class="accent">спартакиадасы</span></a>
+            <button class="hamburger" id="hamburger" aria-label="Мәзір">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О спартакиаде</a></li>
-                <li><a href="program.html">Программа</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="registration.html" class="nav-cta active">Подать заявку</a></li>
-                <li class="language-switch" aria-label="Переключение языка"><a href="registration.html" class="active">RU</a><a href="kk/registration.html">KK</a></li>
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="about.html">Спартакиада туралы</a></li>
+                <li><a href="program.html">Бағдарлама</a></li>
+                <li><a href="contacts.html">Байланыс</a></li>
+                <li><a href="registration.html" class="nav-cta active">Өтінім беру</a></li>
+                <li class="language-switch" aria-label="Тілді ауыстыру"><a href="../registration.html">RU</a><a href="registration.html" class="active">KK</a></li>
             </ul>
         </div>
     </header>
@@ -618,42 +618,42 @@
     <main class="registration-page">
         <div class="container">
             <div class="page-header">
-                <h1>Регистрация участников</h1>
-                <p>Заполните все обязательные поля и прикрепите необходимые документы. После проверки организаторы свяжутся с вами.</p>
+                <h1>Қатысушыларды тіркеу</h1>
+                <p>Барлық міндетті өрістерді толтырып, қажетті құжаттарды тіркеңіз. Тексерістен кейін ұйымдастырушылар сізбен байланысады.</p>
             </div>
 
             <div class="registration-card">
                 <form id="registrationForm" novalidate>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="organization">Организация <span class="required">*</span></label>
-                            <input type="text" id="organization" name="organization" required placeholder="Полное наименование" />
+                            <label for="organization">Ұйым <span class="required">*</span></label>
+                            <input type="text" id="organization" name="organization" required placeholder="Толық атауы" />
                         </div>
                         <div class="form-group">
-                            <label for="fio">ФИО ответственного <span class="required">*</span></label>
-                            <input type="text" id="fio" name="fio" required placeholder="Иванов Иван Иванович" />
+                            <label for="fio">Жауапты тұлғаның аты-жөні <span class="required">*</span></label>
+                            <input type="text" id="fio" name="fio" required placeholder="Тегі Аты Әкесінің аты" />
                         </div>
                         <div class="form-group">
-                            <label for="position">Должность <span class="required">*</span></label>
-                            <input type="text" id="position" name="position" required placeholder="Начальник отдела" />
+                            <label for="position">Лауазымы <span class="required">*</span></label>
+                            <input type="text" id="position" name="position" required placeholder="Бөлім басшысы" />
                         </div>
                         <div class="form-group">
                             <label for="phone">Телефон <span class="required">*</span></label>
                             <input type="tel" id="phone" name="phone" required placeholder="+7 700 123 45 67" />
-                            <span class="field-hint">В формате +7 700 123 45 67</span>
+                            <span class="field-hint">+7 700 123 45 67 форматында</span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email <span class="required">*</span></label>
                             <input type="email" id="email" name="email" required placeholder="example@company.kz" />
                         </div>
                         <div class="form-group">
-                            <label for="city">Город <span class="required">*</span></label>
+                            <label for="city">Қала <span class="required">*</span></label>
                             <input type="text" id="city" name="city" required placeholder="Шымкент" />
                         </div>
                         <div class="form-group">
-                            <label for="sport">Вид спорта <span class="required">*</span></label>
+                            <label for="sport">Спорт түрі <span class="required">*</span></label>
                             <select id="sport" name="sport" required>
-                                <option value="">Выберите вид спорта</option>
+                                <option value="">Спорт түрін таңдаңыз</option>
                                 <option value="football">Футбол</option>
                                 <option value="basketball">Баскетбол</option>
                                 <option value="volleyball">Волейбол</option>
@@ -661,22 +661,22 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="participants">Количество участников <span class="required">*</span></label>
+                            <label for="participants">Қатысушылар саны <span class="required">*</span></label>
                             <input type="number" id="participants" name="participants" required min="1" placeholder="5" />
                         </div>
                         <div class="form-group full-width">
-                            <label for="comment">Комментарий</label>
-                            <textarea id="comment" name="comment" placeholder="Дополнительная информация (при необходимости)"></textarea>
+                            <label for="comment">Пікір</label>
+                            <textarea id="comment" name="comment" placeholder="Қосымша ақпарат (қажет болса)"></textarea>
                         </div>
 
                         <!-- FILES SECTION -->
                         <div class="files-section">
-                            <h3>Прикрепить документы</h3>
-                            <p class="sub">Поддерживаемые форматы: PDF, DOC, DOCX, JPG, JPEG, PNG. Максимальный размер — 10 МБ.</p>
+                            <h3>Құжаттарды тіркеу</h3>
+                            <p class="sub">Қолдау көрсетілетін форматтар: PDF, DOC, DOCX, JPG, JPEG, PNG. Ең үлкен көлемі — 10 МБ.</p>
                             <div class="drop-zone" id="dropZone">
                                 <span class="cloud-icon">📄</span>
-                                <p>Перетащите файлы сюда или нажмите для выбора</p>
-                                <span class="sub">Вы можете загрузить несколько файлов одновременно</span>
+                                <p>Файлдарды осында сүйреп әкеліңіз немесе таңдау үшін басыңыз</p>
+                                <span class="sub">Бір уақытта бірнеше файл жүктей аласыз</span>
                                 <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display:none;" />
                             </div>
                             <div class="file-list" id="fileList"></div>
@@ -686,11 +686,11 @@
                         <!-- CONSENT -->
                         <div class="form-check">
                             <input type="checkbox" id="consent" required />
-                            <label for="consent">Я подтверждаю достоверность предоставленных данных и согласие на их обработку <span class="required">*</span></label>
+                            <label for="consent">Ұсынылған деректердің дұрыстығын және оларды өңдеуге келісімімді растаймын <span class="required">*</span></label>
                         </div>
 
                         <button type="submit" class="btn-primary btn-submit" id="submitBtn">
-                            Отправить заявку
+                            Өтінімді жіберу
                         </button>
                     </div>
                 </form>
@@ -702,10 +702,10 @@
     <div class="modal-overlay" id="successModal">
         <div class="modal-box">
             <div class="check">✓</div>
-            <h2>Спасибо!</h2>
-            <p>Ваша заявка успешно отправлена. После проверки документов организаторы свяжутся с вами.</p>
-            <a href="index.html" class="btn-primary">Вернуться на главную</a>
-            <button class="btn-outline" style="margin-top:12px; width:100%; justify-content:center;" onclick="closeModal()">Закрыть</button>
+            <h2>Рақмет!</h2>
+            <p>Өтініміңіз сәтті жіберілді. Құжаттар тексерілгеннен кейін ұйымдастырушылар сізбен байланысады.</p>
+            <a href="index.html" class="btn-primary">Басты бетке оралу</a>
+            <button class="btn-outline" style="margin-top:12px; width:100%; justify-content:center;" onclick="closeModal()">Жабу</button>
         </div>
     </div>
 
@@ -714,22 +714,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand">Спартакиада <span class="accent">ККС</span></div>
-                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративное спортивное мероприятие</p>
+                    <div class="footer-brand">ККС <span class="accent">спартакиадасы</span></div>
+                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Корпоративтік спорттық іс-шара</p>
                 </div>
                 <div>
-                    <h4>Контакты</h4>
+                    <h4>Байланыс</h4>
                     <p>Телефон: <a href="tel:+77001234567">+7 700 123 45 67</a></p>
                     <p>Email: <a href="mailto:spartakiada@kks.kz">spartakiada@kks.kz</a></p>
                 </div>
                 <div>
-                    <h4>Организатор</h4>
-                    <p>Комитет корпоративного спорта</p>
-                    <p style="font-size:0.85rem; color: var(--text-secondary);">г. Шымкент, 2026</p>
+                    <h4>Ұйымдастырушы</h4>
+                    <p>Корпоративтік спорт комитеті</p>
+                    <p style="font-size:0.85rem; color: var(--text-secondary);">Шымкент қ., 2026</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Спартакиада ККС. Все права защищены.
+                &copy; 2026 ККС спартакиадасы. Барлық құқықтар қорғалған.
             </div>
         </div>
     </footer>
@@ -774,12 +774,12 @@
             const errors = [];
             for (const file of files) {
                 if (file.size > MAX_SIZE) {
-                    errors.push(`Файл "${file.name}" превышает 10 МБ`);
+                    errors.push(`Файл "${file.name}" 10 МБ-тан асады`);
                     continue;
                 }
                 const ext = '.' + file.name.split('.').pop().toLowerCase();
                 if (!ALLOWED_EXTENSIONS.includes(ext)) {
-                    errors.push(`Файл "${file.name}" имеет неподдерживаемый формат`);
+                    errors.push(`Файл "${file.name}" қолдау көрсетілмейтін форматта`);
                     continue;
                 }
                 const exists = uploadedFiles.some(f => f.name === file.name && f.size === file.size);
@@ -805,7 +805,7 @@
                 return `
                     <div class="file-item">
                         <span class="name">📎 ${file.name} <span class="size">(${size} МБ)</span></span>
-                        <button class="remove" data-index="${index}" aria-label="Удалить файл">✕</button>
+                        <button class="remove" data-index="${index}" aria-label="Файлды жою">✕</button>
                     </div>
                 `;
             }).join('');
@@ -832,12 +832,12 @@
     }
 
     if (!document.getElementById('consent').checked) {
-        alert('Подтвердите согласие.');
+        alert('Келісімді растаңыз.');
         return;
     }
 
     submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Отправка...';
+    submitBtn.innerHTML = 'Жіберілуде...';
 
     const data = {
         organization: document.getElementById('organization').value,
@@ -869,16 +869,16 @@
             uploadedFiles = [];
             renderFileList();
         } else {
-            alert("Ошибка отправки.");
+            alert("Жіберу қатесі.");
         }
 
     } catch (err) {
         console.error(err);
-        alert("Не удалось отправить заявку.");
+        alert("Өтінімді жіберу мүмкін болмады.");
     }
 
     submitBtn.disabled = false;
-    submitBtn.innerHTML = 'Отправить заявку';
+    submitBtn.innerHTML = 'Өтінімді жіберу';
 });
 
         function closeModal() {
