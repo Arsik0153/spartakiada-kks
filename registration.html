@@ -851,13 +851,17 @@
         comment: document.getElementById('comment').value
     };
 
+    // JSON не может содержать файлы. FormData отправляет поля и вложения
+    // в формате multipart/form-data.
+    const formData = new FormData();
+    Object.entries(data).forEach(([name, value]) => formData.append(name, value));
+    uploadedFiles.forEach(file => formData.append('files[]', file, file.name));
+
     try {
         const response = await fetch("http://128.140.72.31/spartakiada-api/api/applications", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+            // Не задаём Content-Type вручную: браузер добавит multipart boundary.
+            body: formData
         });
 
         const result = await response.json();
