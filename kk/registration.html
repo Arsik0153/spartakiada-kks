@@ -605,6 +605,7 @@
                 <li><a href="index.html">Басты бет</a></li>
                 <li><a href="about.html">Спартакиада туралы</a></li>
                 <li><a href="program.html">Бағдарлама</a></li>
+                <li><a href="documents.html">Құжаттар</a></li>
                 <li><a href="registration.html" class="nav-cta active">Өтінім беру</a></li>
                 <li class="language-switch" aria-label="Тілді ауыстыру"><a href="../registration.html">RU</a><a href="registration.html" class="active">KK</a></li>
             </ul>
@@ -636,8 +637,8 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Телефон <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="Телефон нөмірін енгізіңіз" />
-                            <span class="field-hint">Телефон нөмірін халықаралық форматта көрсетіңіз</span>
+                            <input type="tel" id="phone" name="phone" required inputmode="numeric" autocomplete="tel" maxlength="18" pattern="\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}" placeholder="+7 (777) 123-45-67" />
+                            <span class="field-hint">Пішімі: +7 (777) 123-45-67</span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email <span class="required">*</span></label>
@@ -821,6 +822,35 @@
         const form = document.getElementById('registrationForm');
         const submitBtn = document.getElementById('submitBtn');
         const modal = document.getElementById('successModal');
+        const phoneInput = document.getElementById('phone');
+
+        function formatKazakhstanPhone(value) {
+            let digits = value.replace(/\D/g, '');
+            const hasCountryPrefix = value.trim().startsWith('+7');
+            const hasNationalPrefix = digits.startsWith('8') && digits.length > 10;
+
+            // 8XXXXXXXXXX, 7XXXXXXXXXX немесе XXXXXXXXXX түрінде енгізуге болады.
+            if (hasNationalPrefix) digits = digits.slice(1);
+            if (digits.startsWith('7') && (hasCountryPrefix || digits.length > 10)) digits = digits.slice(1);
+            digits = digits.slice(0, 10);
+
+            if (!digits) return '';
+            let formatted = '+7 (' + digits.slice(0, 3);
+            if (digits.length >= 3) formatted += ')';
+            if (digits.length > 3) formatted += ' ' + digits.slice(3, 6);
+            if (digits.length > 6) formatted += '-' + digits.slice(6, 8);
+            if (digits.length > 8) formatted += '-' + digits.slice(8, 10);
+            return formatted;
+        }
+
+        phoneInput.addEventListener('input', () => {
+            phoneInput.value = formatKazakhstanPhone(phoneInput.value);
+            phoneInput.setCustomValidity(
+                phoneInput.value && !/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phoneInput.value)
+                    ? 'Нөмірді +7 (777) 123-45-67 пішімінде енгізіңіз.'
+                    : ''
+            );
+        });
 
       form.addEventListener('submit', async (e) => {
     e.preventDefault();
