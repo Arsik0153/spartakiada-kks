@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/applications",
+      "destination": "http://128.140.72.31/spartakiada-api/api/applications"
+    }
+  ]
+}

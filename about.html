@@ -260,12 +260,11 @@
         .footer a:hover {
             color: var(--accent);
         }
-        .footer-brand {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-        .footer-brand .accent {
-            color: var(--accent);
+        .footer-brand img {
+            height: 30px;
+            width: auto;
+            display: block;
+            margin: 0;
         }
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -313,6 +312,9 @@
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
+            }
+            .footer-brand img {
+                margin: 0 auto;
             }
             .page-header h1 {
                 font-size: 1.8rem;
@@ -368,12 +370,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand">Спартакиада <span class="accent">ККС</span></div>
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="Спартакиада ККС" />
+                    </div>
+                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Спартакиада ККС</p>
                 </div>
                 <div>
                     <h4>Контакты</h4>
-                    <p>Телефон: <a href="tel:+77001234567">+7 700 123 45 67</a></p>
                     <p>Email: <a href="mailto:zh.galieva@kus.kz">zh.galieva@kus.kz</a></p>
+                    <p>Тел.: <a href="tel:+77013090471">+7&nbsp;701&nbsp;309&nbsp;0471</a></p>
                 </div>
                 <div>
                     <h4>Организатор</h4>

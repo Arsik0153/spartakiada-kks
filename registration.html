@@ -507,12 +507,11 @@
         .footer a:hover {
             color: var(--accent);
         }
-        .footer-brand {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-        .footer-brand .accent {
-            color: var(--accent);
+        .footer-brand img {
+            height: 30px;
+            width: auto;
+            display: block;
+            margin: 0;
         }
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -579,6 +578,9 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+            .footer-brand img {
+                margin: 0 auto;
+            }
             .modal-box {
                 padding: 28px 20px;
             }
@@ -634,8 +636,8 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Телефон <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+7 700 123 45 67" />
-                            <span class="field-hint">В формате +7 700 123 45 67</span>
+                            <input type="tel" id="phone" name="phone" required placeholder="Введите номер телефона" />
+                            <span class="field-hint">Укажите номер телефона в международном формате</span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email <span class="required">*</span></label>
@@ -709,12 +711,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand">Спартакиада <span class="accent">ККС</span></div>
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="Спартакиада ККС" />
+                    </div>
+                    <p style="margin-top:8px; color: var(--text-secondary); font-size:0.85rem;">Спартакиада ККС</p>
                 </div>
                 <div>
                     <h4>Контакты</h4>
-                    <p>Телефон: <a href="tel:+77001234567">+7 700 123 45 67</a></p>
                     <p>Email: <a href="mailto:zh.galieva@kus.kz">zh.galieva@kus.kz</a></p>
+                    <p>Тел.: <a href="tel:+77013090471">+7&nbsp;701&nbsp;309&nbsp;0471</a></p>
                 </div>
                 <div>
                     <h4>Организатор</h4>
@@ -852,7 +857,7 @@
     uploadedFiles.forEach(file => formData.append('files[]', file, file.name));
 
     try {
-        const response = await fetch("http://128.140.72.31/spartakiada-api/api/applications", {
+        const response = await fetch("/api/applications", {
             method: "POST",
             // Не задаём Content-Type вручную: браузер добавит multipart boundary.
             body: formData
