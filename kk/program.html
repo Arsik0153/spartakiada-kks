@@ -20,8 +20,8 @@
             --bg-card: #171E2E;
             --text-primary: #FFFFFF;
             --text-secondary: #B0B8C9;
-            --accent: #C8102E;
-            --accent-hover: #A00D25;
+            --accent: #F08635;
+            --accent-hover: #C06B2A;
             --border-color: #2A3348;
             --shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
             --radius: 16px;
@@ -33,7 +33,7 @@
         }
         body {
             font-family: var(--font);
-            background: var(--bg-primary);
+            background: var(--bg-primary) url('../images/fon.png') no-repeat center center / cover fixed;
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
@@ -83,14 +83,12 @@
 
         /* ===== HEADER ===== */
         .navbar {
-            background: var(--bg-primary);
             padding: 16px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             position: sticky;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(12px);
-            background: rgba(11, 14, 26, 0.92);
         }
         .nav-inner {
             display: flex;
@@ -190,13 +188,6 @@
             background: #0B0E1A url('../images/fon.png') no-repeat center center / cover;
             position: relative;
         }
-        .page-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(11, 14, 26, 0.8);
-            z-index: 0;
-        }
         .page-section .container {
             position: relative;
             z-index: 1;
@@ -221,14 +212,19 @@
             gap: 12px;
         }
         .program-item {
-            background: var(--bg-card);
+            background: rgba(30, 41, 66, 0.92);
             border-radius: 14px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(240, 134, 53, 0.22);
             overflow: hidden;
             transition: var(--transition);
         }
         .program-item:hover {
-            border-color: rgba(200, 16, 46, 0.3);
+            border-color: rgba(240, 134, 53, 0.65);
+            background: rgba(36, 50, 78, 0.96);
+        }
+        .program-item.active {
+            border-color: var(--accent);
+            background: rgba(240, 134, 53, 0.12);
         }
         .program-header {
             display: flex;
@@ -271,7 +267,7 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             padding: 4px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
         .program-body p:last-child {
             border-bottom: none;
@@ -287,7 +283,7 @@
 
         /* ===== FOOTER ===== */
         .footer {
-            background: var(--bg-primary);
+            background: #1E2942;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 40px 0 28px;
             margin-top: auto;
@@ -391,7 +387,6 @@
                 <li><a href="index.html">Басты бет</a></li>
                 <li><a href="about.html">Спартакиада туралы</a></li>
                 <li><a href="program.html" class="active">Бағдарлама</a></li>
-                <li><a href="contacts.html">Байланыс</a></li>
                 <li><a href="registration.html" class="nav-cta">Өтінім беру</a></li>
                 <li class="language-switch" aria-label="Тілді ауыстыру"><a href="../program.html">RU</a><a href="program.html" class="active">KK</a></li>
             </ul>
