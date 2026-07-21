@@ -670,7 +670,7 @@
                         <!-- FILES SECTION -->
                         <div class="files-section">
                             <h3>Құжаттарды тіркеу</h3>
-                            <p class="sub">Қолдау көрсетілетін форматтар: PDF, DOC, DOCX, JPG, JPEG, PNG. Ең үлкен көлемі — 10 МБ.</p>
+                            <p class="sub">Қолдау көрсетілетін форматтар: PDF, DOC, DOCX, JPG, JPEG, PNG. Ең үлкен көлемі — 50 МБ.</p>
                             <div class="drop-zone" id="dropZone">
                                 <span class="cloud-icon">📄</span>
                                 <p>Файлдарды осында сүйреп әкеліңіз немесе таңдау үшін басыңыз</p>
@@ -752,7 +752,7 @@
         const fileInput = document.getElementById('fileInput');
         const fileList = document.getElementById('fileList');
         const fileError = document.getElementById('fileError');
-        const MAX_SIZE = 10 * 1024 * 1024;
+        const MAX_SIZE = 50 * 1024 * 1024;
         const ALLOWED_EXTENSIONS = ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png'];
         let uploadedFiles = [];
 
@@ -774,7 +774,7 @@
             const errors = [];
             for (const file of files) {
                 if (file.size > MAX_SIZE) {
-                    errors.push(`Файл "${file.name}" 10 МБ-тан асады`);
+                    errors.push(`Файл "${file.name}" 50 МБ-тан асады`);
                     continue;
                 }
                 const ext = '.' + file.name.split('.').pop().toLowerCase();
